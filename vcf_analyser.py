@@ -115,58 +115,7 @@ plt.savefig(f"{out_dir}/top_consequences.png", dpi=400)
 plt.close()
 
 # --------------------------
-# 3️⃣ Clinical significance
-# --------------------------
-df['CLIN_SIG'] = df['CLIN_SIG'].astype(str)
-
-# Split comma-separated significance terms and flatten into single list
-all_clinsigs = (
-    df['CLIN_SIG']
-    .dropna()
-    .str.split(',')
-    .explode()
-    .str.strip()
-    .replace('', 'not_provided')
-)
-
-clin_counts = all_clinsigs.value_counts()
-
-plt.figure(figsize=(12,8))
-sns.barplot(x=clin_counts.values, y=clin_counts.index, palette='coolwarm')
-plt.xlabel("Number of Variants", fontsize=14)
-plt.ylabel("Clinical Significance", fontsize=14)
-plt.title("Variants by Clinical Significance (ClinVar)", fontsize=16)
-plt.tight_layout()
-plt.savefig(f"{out_dir}/clinical_significance.png", dpi=400)
-plt.close()
-
-
-# --------------------------
-# 4️⃣ TLOD / NLOD distributions
-plt.figure(figsize=(12,6))
-sns.histplot(df['TLOD'], bins=50, color='skyblue', label='TLOD', kde=True)
-sns.histplot(df['NLOD'], bins=50, color='salmon', label='NLOD', kde=True)
-plt.xlabel("LOD Score", fontsize=14)
-plt.ylabel("Number of Variants", fontsize=14)
-plt.title("TLOD vs NLOD Distribution", fontsize=16)
-plt.legend()
-plt.tight_layout()
-plt.savefig(f"{out_dir}/TLOD_NLOD_distribution.png", dpi=400)
-plt.close()
-
-# --------------------------
-# 5️⃣ Allele Frequency distribution
-plt.figure(figsize=(12,6))
-sns.histplot(df['AF'].dropna(), bins=50, color='green', kde=True)
-plt.xlabel("Allele Frequency", fontsize=14)
-plt.ylabel("Number of Variants", fontsize=14)
-plt.title("Allele Frequency Distribution", fontsize=16)
-plt.tight_layout()
-plt.savefig(f"{out_dir}/allele_frequency_distribution.png", dpi=400)
-plt.close()
-
-# --------------------------
-# 6️⃣ Variants per chromosome 
+# 3️⃣ Variants per chromosome 
 chrom_counts = df['CHROM'].value_counts().sort_index()
 plt.figure(figsize=(22,8))
 sns.barplot(x=chrom_counts.index, y=chrom_counts.values, palette='cubehelix')
@@ -179,7 +128,7 @@ plt.savefig(f"{out_dir}/variants_per_chromosome.png", dpi=400)
 plt.close()
 
 # --------------------------
-# 7️⃣ Ti/Tv ratio
+# 4️⃣  Ti/Tv ratio
 # --------------------------
 # Define transition and transversion pairs
 transitions = [('A', 'G'), ('G', 'A'), ('C', 'T'), ('T', 'C')]
