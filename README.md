@@ -1,2 +1,114 @@
-# Vcfanalyser
-A simple toolkit to analyze and visualize **Annotated VCF files**.
+\# vcfanalyser
+
+
+
+A simple toolkit to analyze and visualize \*\*VEP-annotated VCF files\*\*.  
+
+It converts VEP-annotated VCFs into tables and generates summary plots for quick variant insights.
+
+
+
+---
+
+
+
+\## ⚙️ How To Use:
+
+
+
+\### 1️⃣ Create and activate a conda environment
+
+```
+
+conda create -n vcfanalyser python=3.10 -y
+
+conda activate vcfanalyser
+
+```
+
+\### 2️⃣ Install dependencies
+
+```
+
+\# Install GATK inside the environment
+
+conda install -c bioconda gatk4 -y
+
+
+
+\# Install Python libraries
+
+```
+
+pip install pandas matplotlib seaborn openpyxl
+
+```
+
+✅Verify installation
+
+```
+
+gatk --version
+
+python -c "import pandas, matplotlib, seaborn, openpyxl; print('Python libs OK')"
+
+```
+
+
+
+\### 3️⃣ Run the analysis
+
+```
+
+chmod +x run\_vcf\_analysis.sh
+
+./run\_vcf\_analysis.sh <input\_vep\_vcf> <output\_dir>
+
+```
+
+Example:
+
+```
+
+./run\_vcf\_analysis.sh sample\_vcf.vcf analysis\_results/
+
+```
+
+---
+
+
+
+Author
+
+
+
+Raghavendra S
+
+Bioinformatics researcher
+
+
+
+📬 Contact: raghava.332410@gmail.com
+
+
+
+---
+
+
+
+\## 📄 License
+
+
+
+This project is released under the \*\*MIT License\*\*.  
+
+If you use or adapt this tool in your work, please \*\*cite or acknowledge the author\*\* as:  
+
+
+
+\*\*Raghavendra S (Raghu-102433). (2025). \*Vcfanalyser\*: A toolkit for analyzing and visualizing VEP-annotated VCF files.\*\*
+
+
+
+
+
