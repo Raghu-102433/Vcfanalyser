@@ -12,11 +12,11 @@ It converts VEP-annotated VCFs into tables and generates summary plots for quick
 
 
 
-## ⚙️ How To Use:
+##  How To Use:
 
 
 
-### 1️⃣ Create and activate a conda environment
+### Create and activate a conda environment
 
 ```
 
@@ -26,7 +26,7 @@ conda activate vcfanalyser
 
 ```
 
-### 2️⃣ Install dependencies
+### Install dependencies
 
 ``` bash
 
@@ -40,7 +40,7 @@ conda install -c bioconda gatk4 -y
 pip install pandas matplotlib seaborn openpyxl
 ```
 
-✅Verify installation
+Verify installation
 
 ```
 gatk --version
@@ -48,7 +48,7 @@ gatk --version
 python -c "import pandas, matplotlib, seaborn, openpyxl; print('Python libs OK')"
 ```
 
-### 3️⃣ Run the analysis
+###  Run the analysis
 
 ```
 chmod +x vcf_analyser.sh
@@ -65,14 +65,13 @@ Example:
 ---
 Author
 Raghavendra S
-
 Bioinformatics researcher
 
 📬 Contact: raghava.332410@gmail.com
 
 ---
 
-## 📄 License
+##  License
 This project is released under the **MIT License**.  
 
 If you use or adapt this tool in your work, please **cite or acknowledge the author** as:  
