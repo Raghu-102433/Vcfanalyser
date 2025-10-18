@@ -64,8 +64,7 @@ Example:
 
 ---
 Author:
-Raghavendra S
-,Bioinformatics researcher
+Raghavendra S, Bioinformatics researcher
 
  Contact: raghava.332410@gmail.com
 
